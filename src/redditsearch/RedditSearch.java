@@ -49,7 +49,7 @@ public class RedditSearch {
             
             //Search Term
             System.out.println("\nSEARCH TERM (not case sensitive)\nEnter Search Term (ie: TesLa)");             
-            String terms = s.next();
+            String terms = s.nextLine();
             
             //time frame
             int t = 6;  
