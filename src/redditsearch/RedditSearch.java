@@ -96,13 +96,13 @@ public class RedditSearch {
 	        labelArray = new Label[1];  
                 
                 //label chart
-                labelArray[0] = new Label(0, 0, "Search Term");
+                labelArray[0] = new Label(3, 0, "Search Term");
                 sheet1.addCell(labelArray[0]);
                 labelArray[0] = new Label(1, 0, "up");
                 sheet1.addCell(labelArray[0]);	
                 labelArray[0] = new Label(2, 0, "down");
                 sheet1.addCell(labelArray[0]);	
-                labelArray[0] = new Label(3, 0, "date");
+                labelArray[0] = new Label(0, 0, "date");
                 sheet1.addCell(labelArray[0]);	
                 labelArray[0] = new Label(4, 0, "link");
                 sheet1.addCell(labelArray[0]);	
@@ -185,7 +185,7 @@ public class RedditSearch {
                                                 dateF = (Date)formatter.parse(datestr); 
 
                                                 WritableCellFormat cf1 = new WritableCellFormat(DateFormats.DEFAULT);
-                                                DateTime dt = new DateTime(3, r, dateF, cf1);
+                                                DateTime dt = new DateTime(0, r, dateF, cf1);
                                                 sheet1.addCell(dt);
 
                                                 //System.out.println(date1); 
@@ -194,12 +194,12 @@ public class RedditSearch {
                                             { 
                                                 System.out.println("date failed");
 
-                                                labelArray[0] = new Label(3, r, date1);
+                                                labelArray[0] = new Label(0, r, date1);
                                                 sheet1.addCell(labelArray[0]);
                                             }                                             
                                         
                                         //labelArray[0] = new Label(0, r, terms[y]);
-                                        labelArray[0] = new Label(0, r, terms);
+                                        labelArray[0] = new Label(3, r, terms);
                                         sheet1.addCell(labelArray[0]);
                                         
                                         numberArray[0] = new Number(1, r, karmaUi);
@@ -321,8 +321,7 @@ public class RedditSearch {
             {
                 System.out.println("GetNextCommentLink() failed");
                 return "null";               
-            }
-         
+            }         
     }
     
     public static String getNextUrl(String html)
@@ -383,8 +382,6 @@ public class RedditSearch {
             {
                 System.out.println("GetHTMLString() failed");
                 return "null"; 
-            }
-         
-    }
-    
+            }         
+    }    
 }
