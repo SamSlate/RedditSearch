@@ -82,8 +82,9 @@ public class RedditSearch {
 		java.util.Date date= new java.util.Date();
 		System.out.println(new Timestamp(date.getTime()));
 		 
-		//String fileName = subReddit + terms[0] + date.getTime() + ".xls"; 
-		String fileName = subReddit + terms + date.getTime() + ".xls"; 
+		//String fileName = subReddit + terms[0] + date.getTime() + ".xls";
+                String fileName = terms.replaceAll("[^a-zA-Z0-9]+","");                
+		fileName = subReddit + fileName + date.getTime() + ".xls"; 
 		 
 		WritableWorkbook workbook = Workbook.createWorkbook(new File(fileName));		
 		WritableSheet sheet1 = workbook.createSheet("First Sheet", 0);
